@@ -6,8 +6,10 @@ import java.util.Scanner;
 
 public class Exercise5_2 {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("E:/lab3_2.txt");
+    public static void main(String[] args) {
+        final String FILE_PATH = "E:/lab3_2.txt";
+        
+        File file = new File(FILE_PATH);
 
         int characters = 0;
         int words = 0;
@@ -19,19 +21,17 @@ public class Exercise5_2 {
                 String s = scan.nextLine();
                 lines++;
                 characters += s.length();
-                String[] split = s.split(" ");
-                for (String word : split) {
-                    words++;
-                }
-
+                words = s.split("\\s+").lenght;
             }
-
+            
+            System.out.println("Characters: " + characters);
+            System.out.println("Words: " + words);
+            System.out.println("Lines: " + lines);
+            
         } catch (FileNotFoundException fnfe) {
-            System.out.println("cannot create the file.");
+            System.out.println("Cannot read" + FILE_PATH + "file!");
         }
-        System.out.println("Characters: " + characters);
-        System.out.println("Words: " + words);
-        System.out.println("Lines: " + lines);
+        
 
     }
 }
