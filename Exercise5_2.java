@@ -21,7 +21,7 @@ public class Exercise5_2 {
                 String s = scan.nextLine();
                 lines++;
                 characters += s.length();
-                words = s.split("\\s+").lenght;
+                words = s.split("\\s+").length;
             }
             
             System.out.println("Characters: " + characters);
